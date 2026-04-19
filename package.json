@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "playwright test",
-  "test:report": "playwright show-report",
-  "lint": "eslint . --ext .ts"
+    "test": "playwright test",
+    "test:report": "playwright show-report",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +14,11 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
     "@typescript-eslint/eslint-plugin": "^8.58.2",
     "@typescript-eslint/parser": "^8.58.2",
+    "cloakbrowser": "^0.3.25",
+    "dotenv": "^17.4.2",
     "eslint": "^10.2.1"
   }
 }
