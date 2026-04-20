@@ -9,12 +9,12 @@ export default defineConfig({
   reporter: [['html'], ['list']],
 
   projects: [
-    // Primero corre el setup de auth
+    // Setup de auth — corre primero
     {
       name: 'setup',
       testMatch: '**/setup/*.setup.ts',
     },
-    // Luego los tests de API
+    // Tests de API — apuntan a Deezer
     {
       name: 'api',
       testDir: './tests/api',
@@ -25,15 +25,13 @@ export default defineConfig({
         },
       },
     },
-    // Luego los tests E2E — dependen del setup
+    // Tests E2E — apuntan a Spotify
     {
       name: 'e2e',
       testDir: './tests/e2e',
-      dependencies: ['setup'],
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://www.deezer.com',
-        storageState: '.auth/session.json',
+        baseURL: 'https://open.spotify.com',
       },
     },
   ],
